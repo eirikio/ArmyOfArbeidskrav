@@ -4,11 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Get resources</title>
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
       referrerpolicy="no-referrer"
-    />
+    /> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="scripts/getting-resources.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            cursor: {
+              pick: "url(images/pickaxe-cursor.png), default",
+              axe: "url(images/axe-cursor.png), default",
+            },
+          },
+        },
+      };
+    </script>
   </head>
   <body>
     <header>
@@ -25,5 +39,20 @@
         </div>
       </nav>
     </header>
+
+    <main>
+      <section id="resources">
+        <article class="flex justify-around mt-5">
+          <p>0</p>
+          <p>0</p>
+          <p>0</p>
+        </article>
+      </section>
+
+      <section
+        class="grid grid-cols-1 lg:grid-cols-2 mt-10 lg:mt-20"
+        id="resources-locations"
+      ></section>
+    </main>
   </body>
 </html>
