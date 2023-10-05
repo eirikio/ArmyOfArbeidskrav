@@ -49,7 +49,7 @@ const WarriorModule = (() => {
         <article class="border flex flex-col justify-center items-center p-3">
             <p class="text-2xl">${warrior.name}</p>
             <img class="h-60 w-40" src="images/${warrior.img}">
-            <button class="w-40 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy Animal ${warrior.price}</button>
+            <button class="w-40 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy Warrior ${warrior.price}</button>
         </article>
           `;
     });
