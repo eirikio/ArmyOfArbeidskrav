@@ -1,15 +1,36 @@
 import ResourcesModule from "./modules/ResourcesModule.js";
 
-const printResourceLocations = document.querySelector("#resources-locations");
+const thiartha = document.querySelector("#minesofthiartha");
+const ghalduz = document.querySelector("#woodsofghalduz");
 
-const showResourceLocations = () => {
-  printResourceLocations.innerHTML = ResourcesModule.showAllResources();
+const trackGold = document.querySelector("#track-gold");
+const trackMetal = document.querySelector("#track-metal");
+const trackWood = document.querySelector("#track-wood");
+
+const minesOfThiartha = () => {
+  trackMetal.innerHTML = ResourcesModule.farmMetal();
+  trackGold.innerHTML = ResourcesModule.randomGold();
+};
+const woodsOfGhalduz = () => {
+  trackWood.innerHTML = ResourcesModule.farmWood();
+};
+
+const getLocalStorage = () => {
+  trackGold.innerHTML = ResourcesModule.getGold();
+  trackMetal.innerHTML = ResourcesModule.getMetal();
+  trackWood.innerHTML = ResourcesModule.getWood();
+};
+
+const clear = () => {
+  localStorage.clear();
 };
 
 const events = () => {
-  showResourceLocations();
+  thiartha.addEventListener("click", minesOfThiartha);
+  ghalduz.addEventListener("click", woodsOfGhalduz);
 };
 
 (() => {
   events();
+  getLocalStorage();
 })();
