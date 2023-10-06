@@ -25,7 +25,7 @@ const AnimalModule = (() => {
         <article class="border flex flex-col justify-center items-center p-3">
             <p class="text-2xl">${animal.name}</p>
             <img class="h-60 w-60" src="images/${animal.img}">
-            <button class="w-40 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy Animal ${animal.price}</button>
+            <button class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy Animal ${animal.price} <img style="width:22px;" src="images/gold-coin.png"/></button>
         </article>
         `;
     });

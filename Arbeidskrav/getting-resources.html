@@ -28,7 +28,9 @@
     <header>
       <nav clasS="bg-black text-white h-20 flex items-center justify-between">
         <div class="ml-5">
-          <h3 class="stext-xl md:text-3xl font-medium">ArmyOfArbeidskrav</h3>
+          <button id="" class="text-xl md:text-3xl font-medium">
+            ArmyOfArbeidskrav
+          </button>
         </div>
         <div class="mr-5">
           <ul class="flex text-sm gap-3 md:text-xl md:gap-8">
@@ -45,16 +47,40 @@
     <main>
       <section id="resources">
         <article class="flex justify-around mt-5">
-          <p>0</p>
-          <p>0</p>
-          <p>0</p>
+          <div style="width: 100px" class="flex items-center justify-center">
+            <img style="width: 30px" src="images/gold-coin.png" alt="" />
+            <p class="text-center ml-2" id="track-gold">0</p>
+          </div>
+          <div style="width: 100px" class="flex items-center justify-center">
+            <img style="width: 30px" src="images/metal.png" alt="" />
+            <p class="text-center ml-2" id="track-metal">0</p>
+          </div>
+          <div style="width: 100px" class="flex items-center justify-center">
+            <img style="width: 30px" src="images/wood.png" alt="" />
+            <p class="text-center ml-2" id="track-wood">0</p>
+          </div>
         </article>
       </section>
 
-      <section
-        class="grid grid-cols-1 lg:grid-cols-2 mt-10 lg:mt-20"
-        id="resources-locations"
-      ></section>
+      <section class="grid grid-cols-1 lg:grid-cols-2 mt-10 lg:mt-20">
+        <article class="m-5 text-center">
+          <p class="text-lg font-medium md:text-xl">Mines of Thiartha</p>
+          <img
+            class="mt-1 rounded-full md:w-9/12 md:block md:mx-auto lg:w-11/12 cursor-pick"
+            src="images/mines-of-thiartha.jpg"
+            id="minesofthiartha"
+          />
+        </article>
+
+        <article class="m-5 text-center">
+          <p class="text-lg font-medium md:text-xl">Woods of Ghalduz</p>
+          <img
+            class="mt-1 rounded-full md:w-9/12 md:block md:mx-auto lg:w-11/12 cursor-axe"
+            src="images/woods-of-ghalduz.png"
+            id="woodsofghalduz"
+          />
+        </article>
+      </section>
     </main>
   </body>
 </html>
