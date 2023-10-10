@@ -33,6 +33,11 @@ const ResourcesModule = (() => {
     return wood;
   };
 
+  const spendGold = (value) => {
+    gold = gold - value;
+    return gold;
+  };
+
   const getGold = () => {
     return gold;
   };
@@ -44,12 +49,14 @@ const ResourcesModule = (() => {
   };
 
   return {
+    updateLocalStorage,
     farmMetal,
     farmWood,
     getGold,
     getMetal,
     getWood,
     randomGold,
+    spendGold,
   };
 })();
 
