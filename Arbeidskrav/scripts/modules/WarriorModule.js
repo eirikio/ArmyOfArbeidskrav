@@ -39,26 +39,11 @@ const WarriorModule = (() => {
   ];
 
   const getAllWarriors = () => {
-    structuredClone(warriors);
-  };
-
-  const showAllWarriors = () => {
-    let htmlTxt = "";
-    warriors.forEach((warrior) => {
-      htmlTxt += `
-        <article class="border flex flex-col justify-center items-center p-3">
-            <p class="text-2xl">${warrior.name}</p>
-            <img class="h-60 w-40" src="images/${warrior.img}">
-            <button class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy Warrior ${warrior.price} <img style="width:22px;" src="images/gold-coin.png"/></button>
-        </article>
-          `;
-    });
-    return htmlTxt;
+    return structuredClone(warriors);
   };
 
   return {
     getAllWarriors,
-    showAllWarriors,
   };
 })();
 
