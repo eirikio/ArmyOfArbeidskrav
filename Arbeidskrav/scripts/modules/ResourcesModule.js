@@ -3,7 +3,7 @@ const ResourcesModule = (() => {
   let metal = parseInt(localStorage.getItem("Metal")) || 0;
   let wood = parseInt(localStorage.getItem("Wood")) || 0;
 
-  const updateLocalStorage = () => {
+  const setLocalStorage = () => {
     localStorage.setItem("Gold", gold);
     localStorage.setItem("Metal", metal);
     localStorage.setItem("Wood", wood);
@@ -22,14 +22,14 @@ const ResourcesModule = (() => {
     let rNr = Math.floor(Math.random() * 10) + 1;
     metal += rNr;
     randomGold();
-    updateLocalStorage();
+    setLocalStorage();
     return metal;
   };
 
   const farmWood = () => {
     let rNr = Math.floor(Math.random() * 10) + 1;
     wood += rNr;
-    updateLocalStorage();
+    setLocalStorage();
     return wood;
   };
 
@@ -49,7 +49,7 @@ const ResourcesModule = (() => {
   };
 
   return {
-    updateLocalStorage,
+    setLocalStorage,
     farmMetal,
     farmWood,
     getGold,

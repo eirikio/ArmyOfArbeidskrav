@@ -15,7 +15,7 @@ const woodsOfGhalduz = () => {
   trackWood.innerHTML = ResourcesModule.farmWood();
 };
 
-const getLocalStorage = () => {
+const updateLocalStorage = () => {
   trackGold.innerHTML = ResourcesModule.getGold();
   trackMetal.innerHTML = ResourcesModule.getMetal();
   trackWood.innerHTML = ResourcesModule.getWood();
@@ -32,5 +32,5 @@ const events = () => {
 
 (() => {
   events();
-  getLocalStorage();
+  updateLocalStorage();
 })();

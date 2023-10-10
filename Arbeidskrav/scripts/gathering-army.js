@@ -2,6 +2,7 @@ import ResourcesModule from "./modules/ResourcesModule.js";
 import WarriorModule from "./modules/WarriorModule.js";
 import AnimalModule from "./modules/AnimalModule.js";
 import WarMachineModule from "./modules/WarMachineModule.js";
+import ArmyModule from "./modules/ArmyModule.js";
 
 const trackGold = document.querySelector("#track-gold");
 const trackMetal = document.querySelector("#track-metal");
@@ -39,9 +40,11 @@ const buyWarriorEvents = () => {
 
       if (ResourcesModule.getGold() > warrior.price) {
         ResourcesModule.spendGold(warrior.price);
-        ResourcesModule.updateLocalStorage();
+        ResourcesModule.setLocalStorage();
         trackGold.innerHTML = ResourcesModule.getGold();
-        armyArray.push(warrior);
+
+        ArmyModule.addToArmy(warrior);
+        console.log(warrior);
       } else {
         alert("Too broke");
       }
@@ -78,7 +81,7 @@ const buyAnimalEvents = () => {
 
       if (ResourcesModule.getGold() > animal.price) {
         ResourcesModule.spendGold(animal.price);
-        ResourcesModule.updateLocalStorage();
+        ResourcesModule.setLocalStorage();
         trackGold.innerHTML = ResourcesModule.getGold();
         armyArray.push(animal);
       } else {
@@ -114,7 +117,7 @@ const buyWarmachineEvents = () => {
 
       if (ResourcesModule.getGold() > warmachine.price) {
         ResourcesModule.spendGold(warmachine.price);
-        ResourcesModule.updateLocalStorage();
+        ResourcesModule.setLocalStorage();
         trackGold.innerHTML = ResourcesModule.getGold();
         armyArray.push(warmachine);
       } else {
@@ -124,7 +127,7 @@ const buyWarmachineEvents = () => {
   });
 };
 
-const getLocalStorage = () => {
+const updateLocalStorage = () => {
   trackGold.innerHTML = ResourcesModule.getGold();
   trackMetal.innerHTML = ResourcesModule.getMetal();
   trackWood.innerHTML = ResourcesModule.getWood();
@@ -138,5 +141,5 @@ const events = () => {
 
 (() => {
   events();
-  getLocalStorage();
+  updateLocalStorage();
 })();
