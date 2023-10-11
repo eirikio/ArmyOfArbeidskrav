@@ -44,7 +44,6 @@ const buyWarriorEvents = () => {
         trackGold.innerHTML = ResourcesModule.getGold();
 
         ArmyModule.addToArmy(warrior);
-        console.log(warrior);
       } else {
         alert("Too broke");
       }
@@ -83,7 +82,8 @@ const buyAnimalEvents = () => {
         ResourcesModule.spendGold(animal.price);
         ResourcesModule.setLocalStorage();
         trackGold.innerHTML = ResourcesModule.getGold();
-        armyArray.push(animal);
+
+        ArmyModule.addToArmy(animal);
       } else {
         alert("Too broke");
       }
@@ -119,7 +119,8 @@ const buyWarmachineEvents = () => {
         ResourcesModule.spendGold(warmachine.price);
         ResourcesModule.setLocalStorage();
         trackGold.innerHTML = ResourcesModule.getGold();
-        armyArray.push(warmachine);
+
+        ArmyModule.addToArmy(warmachine);
       } else {
         alert("Too broke");
       }
