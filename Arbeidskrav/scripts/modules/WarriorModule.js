@@ -42,8 +42,16 @@ const WarriorModule = (() => {
     return structuredClone(warriors);
   };
 
+  const getSearchedUnit = (value) => {
+    const filteredWarriors = warriors.filter(
+      (warrior) => warrior.name === value
+    );
+    return filteredWarriors;
+  };
+
   return {
     getAllWarriors,
+    getSearchedUnit,
   };
 })();
 

@@ -12,6 +12,28 @@ const warriorItems = document.querySelector("#warriors-print");
 const animalItems = document.querySelector("#animals-print");
 const warMachinesItems = document.querySelector("#warmachines-print");
 
+const searchUnitInput = document.querySelector("#search-unit-input");
+const searchUnitBtn = document.querySelector("#search-unit-btn");
+
+const searchWarriorUnits = () => {
+  let htmlTxt = "";
+  const value = searchUnitInput.value;
+  const warriors = WarriorModule.getSearchedUnit(value);
+
+  warriors.forEach((warrior) => {
+    htmlTxt = `
+    <article class="border flex flex-col justify-center items-center p-3">
+      <p class="text-2xl">${warrior.name}</p>
+      <img class="h-60 w-40" src="images/${warrior.img}">
+      <button id="buyWarriorButton" class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy Warrior ${warrior.price} <img style="width:22px;" src="images/gold-coin.png"/></button>
+    </article>
+    `;
+  });
+  warriorItems.innerHTML = htmlTxt;
+};
+
+searchUnitBtn.addEventListener("click", searchWarriorUnits);
+
 let armyArray = [];
 
 const showAllWarriors = () => {
