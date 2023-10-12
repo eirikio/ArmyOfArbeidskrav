@@ -18,8 +18,16 @@ const AnimalModule = (() => {
     return structuredClone(animals);
   };
 
+  const getSearchedUnit = (value) => {
+    const filteredAnimals = animals.filter((animal) =>
+      animal.name.toLocaleLowerCase().includes(value)
+    );
+    return filteredAnimals;
+  };
+
   return {
     getAllAnimals,
+    getSearchedUnit,
   };
 })();
 

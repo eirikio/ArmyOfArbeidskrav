@@ -43,8 +43,8 @@ const WarriorModule = (() => {
   };
 
   const getSearchedUnit = (value) => {
-    const filteredWarriors = warriors.filter(
-      (warrior) => warrior.name === value
+    const filteredWarriors = warriors.filter((warrior) =>
+      warrior.name.toLocaleLowerCase().includes(value)
     );
     return filteredWarriors;
   };

@@ -18,8 +18,16 @@ const WarMachineModule = (() => {
     return structuredClone(warmachines);
   };
 
+  const getSearchedUnit = (value) => {
+    const filteredWarMachines = warmachines.filter((warmachine) =>
+      warmachine.name.toLocaleLowerCase().includes(value)
+    );
+    return filteredWarMachines;
+  };
+
   return {
     getAllWarMachines,
+    getSearchedUnit,
   };
 })();
 
