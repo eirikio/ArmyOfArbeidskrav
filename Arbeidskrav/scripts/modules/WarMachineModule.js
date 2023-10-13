@@ -4,19 +4,31 @@ const WarMachineModule = (() => {
       name: "Catapult",
       categoryName: "War Machines",
       img: "catapult.png",
-      price: 300,
+      price: {
+        gold: 100,
+        metal: 100,
+        wood: 100,
+      },
     },
     {
       name: "Cannon",
       categoryName: "War Machines",
       img: "cannon.png",
-      price: 400,
+      price: {
+        gold: 100,
+        metal: 100,
+        wood: 100,
+      },
     },
     {
       name: "Tanks",
       categoryName: "War Machines",
       img: "tanks.png",
-      price: 800,
+      price: {
+        gold: 100,
+        metal: 100,
+        wood: 100,
+      },
     },
   ];
 

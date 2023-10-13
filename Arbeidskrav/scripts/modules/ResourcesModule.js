@@ -37,6 +37,14 @@ const ResourcesModule = (() => {
     gold = gold - value;
     return gold;
   };
+  const spendMetal = (value) => {
+    metal = metal - value;
+    return gold;
+  };
+  const spendWood = (value) => {
+    wood = wood - value;
+    return wood;
+  };
 
   const getGold = () => {
     return gold;
@@ -57,6 +65,8 @@ const ResourcesModule = (() => {
     getWood,
     randomGold,
     spendGold,
+    spendMetal,
+    spendWood,
   };
 })();
 

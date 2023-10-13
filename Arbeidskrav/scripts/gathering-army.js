@@ -29,7 +29,12 @@ const showAllWarriors = () => {
       <article class="border flex flex-col justify-center items-center p-3">
           <p class="text-2xl">${warrior.name}</p>
           <img class="h-60 w-40" src="images/${warrior.img}">
-          <button id="buyWarriorButton" class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy ${warrior.name} ${warrior.price} <img style="width:22px;" src="images/gold-coin.png"/></button>
+          <button 
+            id="buyWarriorButton" 
+            class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">
+            Buy ${warrior.name} 
+            ${warrior.price} <img style="width:22px;" src="images/gold-coin.png"/>
+          </button>
       </article>
     `;
   });
@@ -68,7 +73,12 @@ const showAllAnimals = () => {
       <article class="border flex flex-col justify-center items-center p-3">
           <p class="text-2xl">${animal.name}</p>
           <img class="h-60 w-60" src="images/${animal.img}">
-          <button id="buyAnimalButton" class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy ${animal.name} ${animal.price} <img style="width:22px;" src="images/gold-coin.png"/></button>
+          <button 
+            id="buyAnimalButton" 
+            class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">
+            Buy ${animal.name} 
+            ${animal.price} <img style="width:22px;" src="images/gold-coin.png"/>
+          </button>
       </article>
       `;
   });
@@ -106,7 +116,12 @@ const showAllWarMachines = () => {
       <article class="border flex flex-col justify-center items-center p-3">
           <p class="text-2xl">${warmachine.name}</p>
           <img class="h-60 w-60" src="images/${warmachine.img}">
-          <button id="buyWarmachineButton" class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy ${warmachine.name} ${warmachine.price} <img style="width:22px;" src="images/gold-coin.png"/></button>
+          <button 
+          id="buyWarmachineButton" 
+          class="flex justify-center items-center gap-2 w-80 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy ${warmachine.name} 
+          ${warmachine.price.gold} <img style="width:22px;" src="images/gold-coin.png"/> 
+          ${warmachine.price.metal} <img style="width:22px;" src="images/metal.png"/> 
+          ${warmachine.price.wood} <img style="width:22px;" src="images/wood.png"/></button>
       </article>
       `;
   });
@@ -121,10 +136,19 @@ const buyWarmachineEvents = () => {
       const warmachines = WarMachineModule.getAllWarMachines();
       const warmachine = warmachines[i];
 
-      if (ResourcesModule.getGold() > warmachine.price) {
-        ResourcesModule.spendGold(warmachine.price);
+      if (
+        ResourcesModule.getGold() > warmachine.price.gold &&
+        ResourcesModule.getMetal() > warmachine.price.metal &&
+        ResourcesModule.getWood() > warmachine.price.wood
+      ) {
+        ResourcesModule.spendGold(warmachine.price.gold);
+        ResourcesModule.spendMetal(warmachine.price.metal);
+        ResourcesModule.spendWood(warmachine.price.wood);
+
         ResourcesModule.setLocalStorage();
         trackGold.innerHTML = ResourcesModule.getGold();
+        trackMetal.innerHTML = ResourcesModule.getMetal();
+        trackWood.innerHTML = ResourcesModule.getWood();
 
         ArmyModule.addToArmy(warmachine);
       } else {
@@ -146,7 +170,12 @@ const searchWarriorUnits = () => {
     <article class="border flex flex-col justify-center items-center p-3">
       <p class="text-2xl">${warrior.name}</p>
       <img class="h-60 w-40" src="images/${warrior.img}">
-      <button id="buyWarriorButton" class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy ${warrior.name} ${warrior.price} <img style="width:22px;" src="images/gold-coin.png"/></button>
+      <button 
+        id="buyWarriorButton" 
+        class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">
+        Buy ${warrior.name} 
+        ${warrior.price} <img style="width:22px;" src="images/gold-coin.png"/>
+      </button>
     </article>
     `;
   });
@@ -163,7 +192,12 @@ const searchAnimalUnits = () => {
     <article class="border flex flex-col justify-center items-center p-3">
       <p class="text-2xl">${animal.name}</p>
       <img class="h-60 w-40" src="images/${animal.img}">
-      <button id="buyWarriorButton" class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy ${animal.name} ${animal.price} <img style="width:22px;" src="images/gold-coin.png"/></button>
+      <button 
+        id="buyWarriorButton" 
+        class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">
+        Buy ${animal.name} 
+        ${animal.price} <img style="width:22px;" src="images/gold-coin.png"/>
+      </button>
     </article>
     `;
   });
@@ -180,7 +214,12 @@ const searchWarMachineUnits = () => {
     <article class="border flex flex-col justify-center items-center p-3">
       <p class="text-2xl">${warmachine.name}</p>
       <img class="h-60 w-40" src="images/${warmachine.img}">
-      <button id="buyWarriorButton" class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy ${warmachine.name} ${warmachine.price} <img style="width:22px;" src="images/gold-coin.png"/></button>
+      <button 
+        id="buyWarriorButton" 
+        class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">
+        Buy ${warmachine.name} 
+        ${warmachine.price} <img style="width:22px;" src="images/gold-coin.png"/>
+      </button>
     </article>
     `;
   });
