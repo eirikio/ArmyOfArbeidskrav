@@ -15,65 +15,11 @@ const warMachinesItems = document.querySelector("#warmachines-print");
 const searchUnitInput = document.querySelector("#search-unit-input");
 const searchUnitBtn = document.querySelector("#search-unit-btn");
 
-const searchWarriorUnits = () => {
-  let htmlTxt = "";
-  const value = searchUnitInput.value;
-  const warriors = WarriorModule.getSearchedUnit(value);
+//! DEV - To Be Removed
+const devGiveResourcesBtn = document.querySelector("#dev-resources");
+const devClearBtn = document.querySelector("#dev-clear");
 
-  warriors.forEach((warrior) => {
-    htmlTxt = `
-    <article class="border flex flex-col justify-center items-center p-3">
-      <p class="text-2xl">${warrior.name}</p>
-      <img class="h-60 w-40" src="images/${warrior.img}">
-      <button id="buyWarriorButton" class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy Warrior ${warrior.price} <img style="width:22px;" src="images/gold-coin.png"/></button>
-    </article>
-    `;
-  });
-  warriorItems.innerHTML = htmlTxt;
-};
-
-searchUnitBtn.addEventListener("click", searchWarriorUnits);
-
-const searchAnimalUnits = () => {
-  let htmlTxt = "";
-  const value = searchUnitInput.value;
-  const animals = AnimalModule.getSearchedUnit(value);
-
-  animals.forEach((animal) => {
-    htmlTxt = `
-    <article class="border flex flex-col justify-center items-center p-3">
-      <p class="text-2xl">${animal.name}</p>
-      <img class="h-60 w-40" src="images/${animal.img}">
-      <button id="buyWarriorButton" class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy Warrior ${animal.price} <img style="width:22px;" src="images/gold-coin.png"/></button>
-    </article>
-    `;
-  });
-  animalItems.innerHTML = htmlTxt;
-};
-
-searchUnitBtn.addEventListener("click", searchAnimalUnits);
-
-const searchWarMachineUnits = () => {
-  let htmlTxt = "";
-  const value = searchUnitInput.value;
-  const warmachines = WarMachineModule.getSearchedUnit(value);
-
-  warmachines.forEach((warmachine) => {
-    htmlTxt = `
-    <article class="border flex flex-col justify-center items-center p-3">
-      <p class="text-2xl">${warmachine.name}</p>
-      <img class="h-60 w-40" src="images/${warmachine.img}">
-      <button id="buyWarriorButton" class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy Warrior ${warmachine.price} <img style="width:22px;" src="images/gold-coin.png"/></button>
-    </article>
-    `;
-  });
-  warMachinesItems.innerHTML = htmlTxt;
-};
-
-searchUnitBtn.addEventListener("click", searchWarMachineUnits);
-
-let armyArray = [];
-
+//? Show and buy units on shop page
 const showAllWarriors = () => {
   const warriors = WarriorModule.getAllWarriors();
 
@@ -83,7 +29,7 @@ const showAllWarriors = () => {
       <article class="border flex flex-col justify-center items-center p-3">
           <p class="text-2xl">${warrior.name}</p>
           <img class="h-60 w-40" src="images/${warrior.img}">
-          <button id="buyWarriorButton" class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy Warrior ${warrior.price} <img style="width:22px;" src="images/gold-coin.png"/></button>
+          <button id="buyWarriorButton" class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy ${warrior.name} ${warrior.price} <img style="width:22px;" src="images/gold-coin.png"/></button>
       </article>
     `;
   });
@@ -122,7 +68,7 @@ const showAllAnimals = () => {
       <article class="border flex flex-col justify-center items-center p-3">
           <p class="text-2xl">${animal.name}</p>
           <img class="h-60 w-60" src="images/${animal.img}">
-          <button id="buyAnimalButton" class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy Animal ${animal.price} <img style="width:22px;" src="images/gold-coin.png"/></button>
+          <button id="buyAnimalButton" class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy ${animal.name} ${animal.price} <img style="width:22px;" src="images/gold-coin.png"/></button>
       </article>
       `;
   });
@@ -160,7 +106,7 @@ const showAllWarMachines = () => {
       <article class="border flex flex-col justify-center items-center p-3">
           <p class="text-2xl">${warmachine.name}</p>
           <img class="h-60 w-60" src="images/${warmachine.img}">
-          <button id="buyWarmachineButton" class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy War Machine ${warmachine.price} <img style="width:22px;" src="images/gold-coin.png"/></button>
+          <button id="buyWarmachineButton" class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy ${warmachine.name} ${warmachine.price} <img style="width:22px;" src="images/gold-coin.png"/></button>
       </article>
       `;
   });
@@ -187,7 +133,68 @@ const buyWarmachineEvents = () => {
     });
   });
 };
+//? ---------------------------------------------------
 
+//? Search for units on shop page
+const searchWarriorUnits = () => {
+  let htmlTxt = "";
+  const value = searchUnitInput.value;
+  const warriors = WarriorModule.getSearchedUnit(value);
+
+  warriors.forEach((warrior) => {
+    htmlTxt = `
+    <article class="border flex flex-col justify-center items-center p-3">
+      <p class="text-2xl">${warrior.name}</p>
+      <img class="h-60 w-40" src="images/${warrior.img}">
+      <button id="buyWarriorButton" class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy ${warrior.name} ${warrior.price} <img style="width:22px;" src="images/gold-coin.png"/></button>
+    </article>
+    `;
+  });
+  warriorItems.innerHTML = htmlTxt;
+};
+
+const searchAnimalUnits = () => {
+  let htmlTxt = "";
+  const value = searchUnitInput.value;
+  const animals = AnimalModule.getSearchedUnit(value);
+
+  animals.forEach((animal) => {
+    htmlTxt = `
+    <article class="border flex flex-col justify-center items-center p-3">
+      <p class="text-2xl">${animal.name}</p>
+      <img class="h-60 w-40" src="images/${animal.img}">
+      <button id="buyWarriorButton" class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy ${animal.name} ${animal.price} <img style="width:22px;" src="images/gold-coin.png"/></button>
+    </article>
+    `;
+  });
+  animalItems.innerHTML = htmlTxt;
+};
+
+const searchWarMachineUnits = () => {
+  let htmlTxt = "";
+  const value = searchUnitInput.value;
+  const warmachines = WarMachineModule.getSearchedUnit(value);
+
+  warmachines.forEach((warmachine) => {
+    htmlTxt = `
+    <article class="border flex flex-col justify-center items-center p-3">
+      <p class="text-2xl">${warmachine.name}</p>
+      <img class="h-60 w-40" src="images/${warmachine.img}">
+      <button id="buyWarriorButton" class="flex justify-center items-center gap-2 w-60 h-10 p-1 bg-purple-800 text-white rounded hover:bg-purple-600">Buy ${warmachine.name} ${warmachine.price} <img style="width:22px;" src="images/gold-coin.png"/></button>
+    </article>
+    `;
+  });
+  warMachinesItems.innerHTML = htmlTxt;
+};
+//?---------------------------------------------------
+
+//! DEV FUNCTIONS - TO BE REMOVED
+const clear = () => {
+  localStorage.clear();
+  location.reload();
+};
+
+//? Function to update the resources values
 const updateLocalStorage = () => {
   trackGold.innerHTML = ResourcesModule.getGold();
   trackMetal.innerHTML = ResourcesModule.getMetal();
@@ -198,6 +205,13 @@ const events = () => {
   showAllWarriors();
   showAllAnimals();
   showAllWarMachines();
+  searchUnitBtn.addEventListener("click", searchWarriorUnits);
+  searchUnitBtn.addEventListener("click", searchAnimalUnits);
+  searchUnitBtn.addEventListener("click", searchWarMachineUnits);
+
+  //! DEV BTNS - TO BE REMOVED
+  // devGiveResourcesBtn.addEventListener("click", giveResources);
+  devClearBtn.addEventListener("click", clear);
 };
 
 (() => {

@@ -21,10 +21,6 @@ const updateLocalStorage = () => {
   trackWood.innerHTML = ResourcesModule.getWood();
 };
 
-const clear = () => {
-  localStorage.clear();
-};
-
 const events = () => {
   thiartha.addEventListener("click", minesOfThiartha);
   ghalduz.addEventListener("click", woodsOfGhalduz);

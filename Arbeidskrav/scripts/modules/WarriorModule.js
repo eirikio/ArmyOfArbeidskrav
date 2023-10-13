@@ -36,6 +36,24 @@ const WarriorModule = (() => {
       img: "warrior-6.jpg",
       price: 275,
     },
+    {
+      name: "Imperial Guard",
+      categoryName: "Warrior",
+      img: "imperial.png",
+      price: 300,
+    },
+    {
+      name: "Dremora Lord",
+      categoryName: "Warrior",
+      img: "daedric.webp",
+      price: 500,
+    },
+    {
+      name: "Battle Jesus",
+      categoryName: "Warrior",
+      img: "battlejesus.jpeg",
+      price: 1200,
+    },
   ];
 
   const getAllWarriors = () => {

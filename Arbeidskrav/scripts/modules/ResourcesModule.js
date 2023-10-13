@@ -11,8 +11,8 @@ const ResourcesModule = (() => {
 
   const randomGold = () => {
     let rGold = Math.floor(Math.random() * 30) + 1;
-    let goldChance = Math.floor(Math.random() * 5);
-    if (goldChance === 0 || goldChance === 3) {
+    let goldChance = Math.floor(Math.random() * 4) + 1;
+    if (goldChance === 1) {
       gold += rGold;
     }
     return gold;

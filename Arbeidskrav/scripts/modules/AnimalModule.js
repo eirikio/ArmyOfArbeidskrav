@@ -12,6 +12,12 @@ const AnimalModule = (() => {
       img: "elephant.png",
       price: 100,
     },
+    {
+      name: "Tiger",
+      categoryName: "Animal",
+      img: "tiger.jpeg",
+      price: 2500,
+    },
   ];
 
   const getAllAnimals = () => {

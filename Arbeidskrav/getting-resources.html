@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Get resources</title>
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
-      referrerpolicy="no-referrer"
-    /> -->
+    <link
+      rel="icon"
+      href="images/favicon_io/favicon-32x32.png"
+      type="image/png"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="scripts/getting-resources.js"></script>
     <script>
@@ -25,8 +25,9 @@
     </script>
   </head>
   <body>
+    <!--? HEADER / NAV-->
     <header>
-      <nav clasS="bg-black text-white h-20 flex items-center justify-between">
+      <nav class="bg-black text-white h-20 flex items-center justify-between">
         <div class="ml-5">
           <button id="" class="text-xl md:text-3xl font-medium">
             ArmyOfArbeidskrav
@@ -43,8 +44,10 @@
         </div>
       </nav>
     </header>
+    <!--! END OF HEADER / NAV-->
 
     <main>
+      <!--? RESOURCES TRACKING BAR-->
       <section id="resources">
         <article class="flex justify-around mt-5">
           <div style="width: 100px" class="flex items-center justify-center">
@@ -61,7 +64,9 @@
           </div>
         </article>
       </section>
+      <!--! END OF RESOURCES TRACKING BAR -->
 
+      <!--? RESOURCE FARM OUTPUT-->
       <section class="grid grid-cols-1 lg:grid-cols-2 mt-10 lg:mt-20">
         <article class="m-5 text-center">
           <p class="text-lg font-medium md:text-xl">Mines of Thiartha</p>
@@ -71,7 +76,6 @@
             id="minesofthiartha"
           />
         </article>
-
         <article class="m-5 text-center">
           <p class="text-lg font-medium md:text-xl">Woods of Ghalduz</p>
           <img
@@ -81,6 +85,7 @@
           />
         </article>
       </section>
+      <!--! END OF RESOURCE FARM OUTPUT -->
     </main>
   </body>
 </html>

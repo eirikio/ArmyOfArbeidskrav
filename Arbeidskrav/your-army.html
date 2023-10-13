@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your army</title>
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
-      referrerpolicy="no-referrer"
+      rel="icon"
+      href="images/favicon_io/favicon-32x32.png"
+      type="image/png"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <script type="module" src="scripts/your-army.js"></script>
   <body>
+    <!--? HEADER / NAVBAR-->
     <header>
       <nav clasS="bg-black text-white h-20 flex items-center justify-between">
         <div class="ml-5">
@@ -30,7 +32,10 @@
         </div>
       </nav>
     </header>
+    <!--!---- END OF HEADER / NAV ------->
+
     <main>
+      <!--? RESOURCES TRACKING BAR-->
       <section id="resources">
         <article class="flex justify-around mt-5">
           <div style="width: 100px" class="flex items-center justify-center">
@@ -47,7 +52,9 @@
           </div>
         </article>
       </section>
+      <!--! END OF RESOURCES TRACKING BAR -->
 
+      <!--? YOUR ARMY OUTPUT-->
       <div class="flex flex-col justify-center items-center mt-10">
         <h1 class="text-2xl font-medium">Warriors</h1>
         <section
@@ -67,6 +74,7 @@
           id="your-army-warmachines"
         ></section>
       </div>
+      <!--! END OF UNITS SHOP -->
     </main>
   </body>
 </html>

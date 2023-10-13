@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gathering army</title>
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
-      referrerpolicy="no-referrer"
+      rel="icon"
+      href="images/favicon_io/favicon-32x32.png"
+      type="image/png"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="scripts/gathering-army.js"></script>
   </head>
   <body>
+    <!--? HEADER / NAVBAR-->
     <header>
       <nav clasS="bg-black text-white h-20 flex items-center justify-between">
         <div class="ml-5">
@@ -28,7 +30,10 @@
         </div>
       </nav>
     </header>
+    <!--!---- END OF HEADER / NAV ------->
+
     <main>
+      <!--? RESOURCES TRACKING BAR-->
       <section id="resources">
         <article class="flex justify-around mt-5">
           <div style="width: 100px" class="flex items-center justify-center">
@@ -45,7 +50,9 @@
           </div>
         </article>
       </section>
+      <!--! END OF RESOURCES TRACKING BAR -->
 
+      <!--? SEARCH FOR UNITS IN SHOP / -->
       <div class="text-center mt-5">
         <label>Search for unit:</label><br />
         <input id="search-unit-input" class="border border-black" type="text" />
@@ -53,7 +60,18 @@
           Search
         </button>
       </div>
+      <!--! END OF SEARCH -->
 
+      <!--? DEV MENU-->
+      <div class="w-80 text-center">
+        <label class="text-center text-red-400">Dev Menu</label>
+        <br />
+        <button id="dev-clear" class="border border-black p-1 m-1">
+          Clear localStorage
+        </button>
+      </div>
+
+      <!--? UNITS SHOP OUTPUT-->
       <h1 class="text-3xl font-medium text-center mt-10">Warriors</h1>
       <section
         class="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 m-4"
@@ -71,6 +89,7 @@
         class="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 m-4"
         id="warmachines-print"
       ></section>
+      <!--! END OF UNITS SHOP -->
     </main>
   </body>
 </html>

@@ -12,6 +12,12 @@ const WarMachineModule = (() => {
       img: "cannon.png",
       price: 400,
     },
+    {
+      name: "Tanks",
+      categoryName: "War Machines",
+      img: "tanks.png",
+      price: 800,
+    },
   ];
 
   const getAllWarMachines = () => {
