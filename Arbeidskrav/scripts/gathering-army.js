@@ -189,6 +189,8 @@ const searchWarMachineUnits = () => {
 //?---------------------------------------------------
 
 //! DEV FUNCTIONS - TO BE REMOVED
+const giveResources = () => {};
+
 const clear = () => {
   localStorage.clear();
   location.reload();
