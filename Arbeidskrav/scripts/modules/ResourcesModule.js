@@ -56,6 +56,13 @@ const ResourcesModule = (() => {
     return wood;
   };
 
+  const giveResources = () => {
+    gold = gold + 100000;
+    metal = metal + 100000;
+    wood = wood + 100000;
+    setLocalStorage();
+  };
+
   return {
     setLocalStorage,
     farmMetal,
@@ -67,6 +74,7 @@ const ResourcesModule = (() => {
     spendGold,
     spendMetal,
     spendWood,
+    giveResources,
   };
 })();
 

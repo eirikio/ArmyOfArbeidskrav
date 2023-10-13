@@ -21,7 +21,7 @@ const printArmy = () => {
 
   armyList.forEach((unit) => {
     htmlTxt = `
-      <article class="border w-20 m-2 p-3 shadow-lg">
+      <article class="border w-20 m-2 p-3 shadow-lg hover:scale-150">
         <img src="images/${unit.value.img}">
       </article>
     `;

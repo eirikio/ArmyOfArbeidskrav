@@ -6,8 +6,8 @@ const WarMachineModule = (() => {
       img: "catapult.png",
       price: {
         gold: 100,
-        metal: 100,
-        wood: 100,
+        metal: 75,
+        wood: 150,
       },
     },
     {
@@ -15,9 +15,9 @@ const WarMachineModule = (() => {
       categoryName: "War Machines",
       img: "cannon.png",
       price: {
-        gold: 100,
-        metal: 100,
-        wood: 100,
+        gold: 200,
+        metal: 150,
+        wood: 40,
       },
     },
     {
@@ -25,9 +25,9 @@ const WarMachineModule = (() => {
       categoryName: "War Machines",
       img: "tanks.png",
       price: {
-        gold: 100,
-        metal: 100,
-        wood: 100,
+        gold: 300,
+        metal: 500,
+        wood: 20,
       },
     },
   ];

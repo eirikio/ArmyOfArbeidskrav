@@ -228,7 +228,10 @@ const searchWarMachineUnits = () => {
 //?---------------------------------------------------
 
 //! DEV FUNCTIONS - TO BE REMOVED
-const giveResources = () => {};
+const giveResources = () => {
+  ResourcesModule.giveResources();
+  updateLocalStorage();
+};
 
 const clear = () => {
   localStorage.clear();
@@ -251,7 +254,7 @@ const events = () => {
   searchUnitBtn.addEventListener("click", searchWarMachineUnits);
 
   //! DEV BTNS - TO BE REMOVED
-  // devGiveResourcesBtn.addEventListener("click", giveResources);
+  devGiveResourcesBtn.addEventListener("click", giveResources);
   devClearBtn.addEventListener("click", clear);
 };
 
